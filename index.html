@@ -48,10 +48,10 @@
             </form>
           </div>
         </div>
-        <h1>Brisbane, AU</h1>
+        <h1 id="city"></h1>
         <p class="last-updated">
           Last Updated:
-          <span class="day-date-time">Monday, 7 November 2022, 17:00</span>
+          <span class="day-date-time" id="day-date-time"></span>
         </p>
         <div class="row">
           <div class="col-1"></div>
@@ -59,7 +59,7 @@
             <i class="fa-solid fa-sun header-icon"></i>
           </div>
           <div class="col-4">
-            <span class="current-temperature">25</span>
+            <span class="current-temperature" id="temperature"></span>
             <span class="change-units">
               <span class="units celcius">°C</span> |
               <span class="units fahrenheit">°F</span></span
@@ -67,11 +67,10 @@
           </div>
           <div class="col-4 temperature-description">
             <ul>
-              <li>Clear</li>
-              <li>Feels like: 26°</li>
-              <li>Wind: 7km/h</li>
-              <li>Humidity: 84%</li>
-              <li>Pressure: 1012 hPa</li>
+              <li id="description"></li>
+              <li>Feels like: <span id="feels-like"></span>°</li>
+              <li>Wind: <span id="wind"></span>km/h</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
             </ul>
           </div>
           <div class="col-1"></div>
