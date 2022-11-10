@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100;300;400;500;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -48,9 +49,13 @@
           </div>
         </div>
         <h1>Brisbane, AU</h1>
-        <p class="day-date-time">Monday, 7 November 2022, 17:00</p>
+        <p class="last-updated">
+          Last Updated:
+          <span class="day-date-time">Monday, 7 November 2022, 17:00</span>
+        </p>
         <div class="row">
-          <div class="col-4">
+          <div class="col-1"></div>
+          <div class="col-2">
             <i class="fa-solid fa-sun header-icon"></i>
           </div>
           <div class="col-4">
@@ -61,42 +66,15 @@
             >
           </div>
           <div class="col-4 temperature-description">
-            Clear
-            <br />
-            Feels like: 26°
-          </div>
-        </div>
-        <div class="row">
-          <div class="col weather-attribute">
             <ul>
-              <li class="attribute">Wind:</li>
-              <li>7km/h</li>
+              <li>Clear</li>
+              <li>Feels like: 26°</li>
+              <li>Wind: 7km/h</li>
+              <li>Humidity: 84%</li>
+              <li>Pressure: 1012 hPa</li>
             </ul>
           </div>
-          <div class="col weather-attribute">
-            <ul>
-              <li class="attribute">Gust:</li>
-              <li>20km/h</li>
-            </ul>
-          </div>
-          <div class="col weather-attribute">
-            <ul>
-              <li class="attribute">Humidity:</li>
-              <li>84%</li>
-            </ul>
-          </div>
-          <div class="col weather-attribute">
-            <ul>
-              <li class="attribute">Sunrise:</li>
-              <li>05:00</li>
-            </ul>
-          </div>
-          <div class="col weather-attribute">
-            <ul>
-              <li class="attribute">Sunset:</li>
-              <li>18:00</li>
-            </ul>
-          </div>
+          <div class="col-1"></div>
         </div>
         <h3 class="forecast-header">5-Day Forecast</h3>
         <div class="row">

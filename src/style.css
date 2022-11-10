@@ -76,20 +76,25 @@ small {
   padding: 0 3px;
 }
 
+.last-updated {
+  font-weight: 500;
+  margin: 0 0 40px 5px;
+}
+
 .day-date-time {
   letter-spacing: 1.5px;
   margin-left: 5px;
 }
 
 .header-icon {
-  margin: 28px 110px 40px;
-  font-size: 70px;
+  margin: 23px 10px 40px;
+  font-size: 80px;
 }
 
 .current-temperature {
   font-size: 80px;
   font-weight: 500;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 .change-units {
@@ -105,16 +110,7 @@ small {
 
 .temperature-description {
   position: relative;
-  top: 35px;
-}
-
-.weather-attribute {
-  text-align: center;
-}
-
-.attribute {
-  font-size: 18px;
-  font-weight: 500;
+  left: 40px;
 }
 
 .forecast-header {
