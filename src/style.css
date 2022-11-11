@@ -2,13 +2,13 @@ body {
   font-family: "Quicksand", sans-serif;
   margin: 30px auto;
   color: #292644;
-  background: #efedf0;
+  background: rgb(239, 237, 240);
   max-width: 700px;
 }
 
 h1 {
   font-family: "Alegreya Sans SC", sans-serif;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 800;
   margin: 10px 0 0 0;
 }
@@ -38,7 +38,7 @@ small {
   padding: 10px 20px;
   border: 2px solid #292644;
   border-radius: 15px;
-  background: rgba(250, 144, 122, 0.5);
+  background: rgb(250, 144, 122);
   background-image: url("../images/sunrise-resize.jpg");
 }
 
@@ -46,10 +46,10 @@ small {
   font-size: 20px;
   margin-bottom: 5px;
   padding: 5px 0 5px 10px;
+  border: 2px solid #292644;
   border-radius: 15px;
   line-height: 30px;
-  border: 2px solid #292644;
-  background: rgba(255, 184, 153, 0.8);
+  background: rgba(239, 237, 240, 0.3);
   color: #292644;
 }
 
@@ -65,7 +65,7 @@ small {
 }
 
 .font-icon:hover {
-  background: rgba(255, 184, 153, 0.8);
+  background: rgba(239, 237, 240, 0.3);
   transition: all 200ms ease-in-out;
   border-radius: 15px;
   box-shadow: rgba(41, 38, 68, 0.5) 3px 5px 5px 2px;
@@ -85,13 +85,10 @@ small {
   margin-left: 5px;
 }
 
-.header-icon {
-  margin: 23px 10px 40px;
-  font-size: 80px;
-}
-
 .current-temperature {
-  font-size: 80px;
+  position: relative;
+  bottom: 5px;
+  font-size: 70px;
   font-weight: 500;
   margin-left: 10px;
 }
@@ -99,11 +96,11 @@ small {
 .change-units {
   font-size: 20px;
   position: relative;
-  top: -42px;
+  bottom: 42px;
 }
 
 .units:hover {
-  color: #915457;
+  color: #8f5457;
   font-weight: 500;
 }
 
