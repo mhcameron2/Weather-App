@@ -58,13 +58,17 @@
           <div class="col-1"></div>
           <div class="col-2">
             <img src="" alt="" id="header-icon" />
-            <!-- <i class="fa-solid fa-sun header-icon"></i> -->
           </div>
           <div class="col-4">
             <span class="current-temperature" id="temperature"></span>
             <span class="change-units">
-              <span class="units celcius">°C</span> |
-              <span class="units fahrenheit">°F</span></span
+              <span class="units celsius"
+                ><a href="#" id="celsius-link" class="active">°C</a></span
+              >
+              |
+              <span class="units fahrenheit"
+                ><a href="#" id="fahrenheit-link">°F</a></span
+              ></span
             >
           </div>
           <div class="col-4 temperature-description">
@@ -137,7 +141,9 @@
         </div>
       </div>
       <small>
-        <a href="https://github.com/mhcameron2/weather-app">Open-source code</a>
+        <a href="https://github.com/mhcameron2/weather-app" class="github-link"
+          >Open-source code</a
+        >
         by Michelle Cameron
       </small>
     </div>

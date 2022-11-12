@@ -64,13 +64,6 @@ small {
   border-radius: 15px;
 }
 
-.font-icon:hover {
-  background: rgba(239, 237, 240, 0.3);
-  transition: all 200ms ease-in-out;
-  border-radius: 15px;
-  box-shadow: rgba(41, 38, 68, 0.5) 3px 5px 5px 2px;
-}
-
 .location-icon {
   padding: 0 3px;
 }
@@ -97,15 +90,6 @@ small {
   font-size: 20px;
   position: relative;
   bottom: 42px;
-}
-
-.units:hover {
-  color: #8f5457;
-  font-weight: 500;
-}
-
-li:first-letter {
-  text-transform: capitalize;
 }
 
 .temperature-description {
@@ -135,4 +119,40 @@ li:first-letter {
 .forecast-icon {
   font-size: 50px;
   padding: 15px 0;
+}
+
+.change-units .active {
+  color: #292644;
+  cursor: default;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.change-units .active:hover {
+  text-decoration: none;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+#celsius #fahrenheit {
+  color: #292644;
+}
+
+.github-link {
+  color: rgba(41, 38, 68, 0.5);
+  font-weight: 500;
+}
+
+.font-icon:hover {
+  background: rgba(239, 237, 240, 0.3);
+  transition: all 200ms ease-in-out;
+  border-radius: 15px;
+  box-shadow: rgba(41, 38, 68, 0.5) 3px 5px 5px 2px;
+}
+
+.github-link:hover {
+  color: #fa907a;
+  transition: all 200ms ease-in-out;
 }
