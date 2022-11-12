@@ -60,6 +60,33 @@ function showTemperature(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "d71a4b54dab7353d278293768b930126";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Brisbane&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showTemperature);
+function searchLocation(position) {
+  let apiKey = "d71a4b54dab7353d278293768b930126";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+function search(city) {
+  let apiKey = "d71a4b54dab7353d278293768b930126";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("click", getCurrentLocation);
+
+search("Brisbane");
