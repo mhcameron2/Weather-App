@@ -59,6 +59,8 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 function searchLocation(position) {
@@ -81,6 +83,10 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   search(cityInput.value);
 }
 
