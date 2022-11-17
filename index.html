@@ -62,12 +62,16 @@
           <div class="col-4">
             <span class="current-temperature" id="temperature"></span>
             <span class="change-units">
-              <span class="units celsius"
-                ><a href="#" id="celsius-link" class="active">°C</a></span
+              <span class="units"
+                ><a href="#" id="celsius-link" class="active celcius"
+                  >°C</a
+                ></span
               >
               |
-              <span class="units fahrenheit"
-                ><a href="#" id="fahrenheit-link">°F</a></span
+              <span class="units"
+                ><a href="#" id="fahrenheit-link" class="fahrenheit"
+                  >°F</a
+                ></span
               ></span
             >
           </div>
@@ -82,63 +86,7 @@
           <div class="col-1"></div>
         </div>
         <h3 class="forecast-header">5-Day Forecast</h3>
-        <div class="row">
-          <div class="col">
-            <div class="card forecast">
-              <div class="card-body">
-                <ul>
-                  <li class="day">Sun</li>
-                  <li><i class="fa-solid fa-sun forecast-icon"></i></li>
-                  <li>28°</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card forecast">
-              <div class="card-body">
-                <ul>
-                  <li class="day">Mon</li>
-                  <li><i class="fa-solid fa-sun forecast-icon"></i></li>
-                  <li>27°</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card forecast">
-              <div class="card-body">
-                <ul>
-                  <li class="day">Tue</li>
-                  <li><i class="fa-solid fa-sun forecast-icon"></i></li>
-                  <li>31°</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card forecast">
-              <div class="card-body">
-                <ul>
-                  <li class="day">Wed</li>
-                  <li><i class="fa-solid fa-sun forecast-icon"></i></li>
-                  <li>29°</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card forecast">
-              <div class="card-body">
-                <ul>
-                  <li class="day">Thu</li>
-                  <li><i class="fa-solid fa-sun forecast-icon"></i></li>
-                  <li>32°</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="five-day-forecast"></div>
       </div>
       <small>
         <a href="https://github.com/mhcameron2/weather-app" class="github-link"

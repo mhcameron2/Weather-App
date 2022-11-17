@@ -121,23 +121,37 @@ small {
   padding: 15px 0;
 }
 
-.change-units .active {
+.celcius,
+.fahrenheit {
+  color: rgba(41, 38, 68, 0.6);
+  text-decoration: none;
+}
+
+.celcius:hover {
+  text-decoration: underline;
+  color: #516b91;
+}
+
+.fahrenheit:hover {
+  text-decoration: underline;
+  color: #516b91;
+}
+
+.change-units,
+.active {
   color: #292644;
   cursor: default;
   text-decoration: none;
   font-weight: 500;
 }
 
-.change-units .active:hover {
+.change-units,
+.active:hover {
   text-decoration: none;
 }
 
 li:first-letter {
   text-transform: capitalize;
-}
-
-#celsius #fahrenheit {
-  color: #292644;
 }
 
 .github-link {

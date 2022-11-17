@@ -107,6 +107,31 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#five-day-forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+        <div class="card forecast">
+          <div class="card-body">
+            <ul>
+              <li class="day">${day}</li>
+              <li><i class="fa-solid fa-sun forecast-icon"></i></li>
+              <li>28°</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+  console.log(forecast);
+}
+
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -122,3 +147,4 @@ let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentLocation);
 
 search("Brisbane");
+displayForecast();
