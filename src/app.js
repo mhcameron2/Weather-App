@@ -129,7 +129,6 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
-  console.log(forecast);
 }
 
 let celsiusTemperature = null;
