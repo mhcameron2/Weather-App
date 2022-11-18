@@ -102,10 +102,8 @@ small {
 
 .forecast {
   margin: 10px 0 15px 0;
-  font-size: 20px;
   min-width: 100px;
   max-width: 100px;
-  font-weight: 600;
   text-align: center;
   background: rgba(255, 184, 153, 0.3);
   border: 2px solid transparent;
@@ -114,11 +112,21 @@ small {
 
 .day {
   font-size: 20px;
+  font-weight: 600;
 }
 
 .forecast-icon {
-  font-size: 50px;
-  padding: 15px 0;
+  padding: 5px 0;
+}
+
+.max-temp,
+.min-temp {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.min-temp {
+  color: rgba(41, 38, 68, 0.7);
 }
 
 .celcius,

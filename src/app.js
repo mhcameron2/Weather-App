@@ -43,6 +43,13 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let city = document.querySelector("#city");
@@ -115,28 +122,37 @@ function displayCelsiusTemperature(event) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecast = document.querySelector("#five-day-forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#five-day-forecast");
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-        <div class="card forecast">
-          <div class="card-body">
-            <ul>
-              <li class="day">${day}</li>
-              <li><i class="fa-solid fa-sun forecast-icon"></i></li>
-              <li>28°</li>
-            </ul>
+  forecast.forEach(function (forecastDay, index) {
+    if (index != 0 && index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+          <div class="card forecast">
+            <div class="card-body">
+              <ul>
+                <li class="day">${formatDay(forecastDay.dt)}</li>
+                <li>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="" class="forecast-icon" width="70" />
+                </li>
+                <li><span class="max-temp id="max-temp">${Math.round(
+                  forecastDay.temp.max
+                )}°</span> <span class="min-temp" id="min-temp">${Math.round(
+          forecastDay.temp.min
+        )}°</span></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let celsiusTemperature = null;
