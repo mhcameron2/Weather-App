@@ -86,10 +86,11 @@ small {
   margin-left: 10px;
 }
 
-.change-units {
+.units {
   font-size: 20px;
   position: relative;
-  bottom: 42px;
+  bottom: 40px;
+  font-weight: 500;
 }
 
 .temperature-description {
@@ -143,19 +144,6 @@ small {
 .fahrenheit:hover {
   text-decoration: underline;
   color: #516b91;
-}
-
-.change-units,
-.active {
-  color: #292644;
-  cursor: default;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.change-units,
-.active:hover {
-  text-decoration: none;
 }
 
 li:first-letter {

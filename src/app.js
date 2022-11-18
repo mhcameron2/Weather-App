@@ -72,8 +72,6 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
   getForecast(response.data.coord);
 }
 
@@ -99,26 +97,7 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#city-input");
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsiusTemperature);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
   search(cityInput.value);
-}
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
 }
 
 function displayForecast(response) {
@@ -154,14 +133,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
