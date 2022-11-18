@@ -37,6 +37,12 @@ function formatDate(timestamp) {
   return `${day} ${date} ${month}, ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "b400ae3b711a616262d18b0ca2cbe78f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let city = document.querySelector("#city");
@@ -61,6 +67,7 @@ function showTemperature(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
+  getForecast(response.data.coord);
 }
 
 function searchLocation(position) {
@@ -107,7 +114,8 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#five-day-forecast");
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHTML = `<div class="row">`;
@@ -146,4 +154,3 @@ let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentLocation);
 
 search("Brisbane");
-displayForecast();
